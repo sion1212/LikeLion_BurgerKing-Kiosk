@@ -225,7 +225,7 @@ BUILD SUCCESSFUL in 0s
 
 - 과제는 이 저장소를 Fork & Clone 해 시작한다
 - 기능을 구현하기 전에 구현할 기능 목록을 `docs/README.md`에 정리한다
-    - 작성 양식은 자유이나, 필요한 경우 [마크다운](https://github.com/jinkyukim-me/markdown_ko) 문법을 참고한다.
+    - 작성 양식은 자유이나, 필요한 경우 [마크다운](https://github.com/jinkyukim-me/markdown_ko) 문법을 참고한다
 - [멋사 컨벤션](https://github.com/LikeLionHGU)을 준수하여 버전관리를 한다
 - 구현이 완료되면 이 저장소에 Pull Request 를 보내 과제를 제출한다
     - PR 제목은 `[12기] $이름 중간과제 제출합니다` 형식으로 작성한다
