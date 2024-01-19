@@ -34,7 +34,7 @@
 - 햄버거 또는 사이드 또는 음료를 선택했을 경우
 
     - 햄버거 또는 사이드 또는 음료 리스트를 가격과 함께 출력해야 한다 (각 메뉴는 아래의 항목으로 고정한다)
-      <img width="700" alt="image" src="https://github.com/Dobbinci/gitpractice/assets/95361587/79a13108-65e7-4489-bab1-01bc2104fd66">
+      <img width="704" alt="image" src="https://github.com/LikeLionHGU/BurgerKing-Kiosk/assets/95361587/8e559bb7-8e7b-4999-9e9d-cbae4fdc4412">
 
     - 사용자는 출력된 메뉴 중 하나를 선택할 수 있어야 한다
     - 선택한 메뉴는 장바구니에 담겨야 한다
