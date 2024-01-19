@@ -74,7 +74,7 @@
 - 그 외 요구사항
 
     - 사용자가 잘못된 값을 입력할 경우 `IllegalArgumentException`을 발생시키고 애플리케이션을 종료한다
-    - 장바구니에 담을 수 있는 최대 수량은 50개이다
+    - 장바구니에 담을 수 있는 단일품목의 최대 수량은 50개이다
     - 홈을 제외한 모든 화면에는 홈으로 돌아갈 수 있는 방법이 존재해야 한다
 
 ## 실행화면 예시
@@ -224,7 +224,7 @@ BUILD SUCCESSFUL in 0s
 ## 과제 진행방식
 
 - 과제는 이 저장소를 Fork & Clone 해 시작한다
-- 기능을 구현하기 전에 구현할 기능 목록을 `docs/README.md`에 정리한다
+- 기능을 구현하기 전에 구현할 기능 목록을 `docs/README.md`를 생성하여 정리한다
     - 작성 양식은 자유이나, 필요한 경우 [마크다운](https://github.com/jinkyukim-me/markdown_ko) 문법을 참고한다
 - [멋사 컨벤션](https://github.com/LikeLionHGU)을 준수하여 버전관리를 한다
 - 구현이 완료되면 이 저장소에 Pull Request 를 보내 과제를 제출한다
