@@ -1,5 +1,7 @@
 package kiosk;
 
+import java.util.ArrayList;
+
 public class Application {
     public static void main(String[] args) {
         Application application = new Application();
@@ -12,14 +14,26 @@ public class Application {
         Branch branch = new Branch();
 
         int menu;
-        boolean exit = false;
+        int stateOfBranch;
+        ArrayList<SelectedMenu> ShoppingBasket = new ArrayList<>();
+
         while(true){
             //홈 화면 출력하는 부분
             print.home();
             menu = input.menuNumber();
                 //1,2,3메뉴 선택 : 해당 메뉴 출력 > 메뉴선택 받기
-                exit = branch.homeToSelectedMenu(menu);
-                if(exit) break;
+                stateOfBranch = branch.homeToSelectedMenu(menu);
+                if(stateOfBranch == 1){
+                    branch.DecideWhichCategoryToPrint(menu);
+                    int selectedFood = input.menuNumber();
+
+                }
+                else if(stateOfBranch == 2){
+
+                }
+                else if(stateOfBranch == 3){
+
+                }
                     //메뉴를 고르면 장바구니에 담고, 메세지 출력하고 홈 화면으로 이동
 
                 //4 장바구니 선택시 지금까지 담긴 메뉴, 선택가능한 메뉴, 총 금액 출력

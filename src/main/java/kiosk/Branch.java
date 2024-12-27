@@ -6,21 +6,17 @@ public class Branch {
     Print print = new Print();
     Input input = new Input();
 
-    public boolean homeToSelectedMenu(int menu){
-        boolean isExit = false;
-        int selectedMenu;
-
+    public int homeToSelectedMenu(int menu){
         if(menu == 1 || menu == 2 || menu == 3){
-            DecideWhichCategoryToPrint(menu);
-            selectedMenu = input.menuNumber();
+            return 1;
         }
         else if(menu == 4){
-
+            return 2;
         }
         else if(menu == 5){
-            isExit = true;
+            return 0;
         }
-        return isExit;
+            throw new IllegalArgumentException("Invalid menu");
     }
 
     public void DecideWhichCategoryToPrint(int menu){
