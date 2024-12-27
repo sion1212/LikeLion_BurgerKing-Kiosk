@@ -9,30 +9,22 @@ public class Print {
         System.out.print("메뉴선택:");
     }
 
-    public void menu(int selectedMenuFormHome){
-
-    }
-
-    private void decideWhichFunctionsToPerform(int selectedMenuFormHome){
-        if(menus.==0){}
-    }
-
-    private void burgers (ArrayList<Menu> burgers){
+    public void burgers (ArrayList<Menu> burgers){
         System.out.println("=====햄버거 메뉴=====\n");
         printElements(burgers);
-        System.out.println("\n메뉴선택 (0을 선택 시 홈으로):");
+        System.out.print("\n메뉴선택 (0을 선택 시 홈으로):");
     }
 
-    private void sides (ArrayList<Menu> sides){
+    public void sides (ArrayList<Menu> sides){
         System.out.println("=====햄버거 메뉴=====\n");
         printElements(sides);
-        System.out.println("\n메뉴선택 (0을 선택 시 홈으로):");
+        System.out.print("\n메뉴선택 (0을 선택 시 홈으로):");
     }
 
-    private void beverages (ArrayList<Menu> beverages){
+    public void beverages (ArrayList<Menu> beverages){
         System.out.println("=====햄버거 메뉴=====\n");
         printElements(beverages);
-        System.out.println("\n메뉴선택 (0을 선택 시 홈으로):");
+        System.out.print("\n메뉴선택 (0을 선택 시 홈으로):");
     }
 
     private void printElements(ArrayList<Menu> menus){

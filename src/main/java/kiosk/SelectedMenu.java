@@ -4,8 +4,8 @@ public class SelectedMenu extends Menu{
     private int amount;
     private final int INTIAL = 1;
 
-    public SelectedMenu(int category, String name, int price) {
-        super(category, name, price);
+    public SelectedMenu(String name, int price) {
+        super(name, price);
         this.amount = INTIAL;
     }
 
