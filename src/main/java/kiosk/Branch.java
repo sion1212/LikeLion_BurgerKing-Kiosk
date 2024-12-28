@@ -14,12 +14,12 @@ public class Branch {
             return 2;
         }
         else if(menu == 5){
-            return 0;
+            return 3;
         }
             throw new IllegalArgumentException("Invalid menu");
     }
 
-    public void DecideWhichCategoryToPrint(int menu){
+    public void decideWhichCategoryToPrint(int menu){
         Initialization initialization = new Initialization();
 
         if(menu == 1){
@@ -31,5 +31,19 @@ public class Branch {
         else if(menu == 3){
             print.beverages(initialization.beverages());
         }
+    }
+
+    public ArrayList<Menu> initializeMenu(int menu){
+        Initialization initialization = new Initialization();
+        if(menu == 1){
+            return initialization.burgers();
+        }
+        else if(menu == 2){
+            return initialization.sides();
+        }
+        else if(menu == 3){
+            return initialization.beverages();
+        }
+        return null;
     }
 }
