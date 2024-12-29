@@ -56,7 +56,7 @@ public class Page {
 
         printing.deletePage(shoppingBasket);
         menuNumberToDelete = input.basketIndex(shoppingBasket);
-        if(menuNumberToDelete != 0){
+        if(menuNumberToDelete-- != 0){
             System.out.print("정말 삭제 하시겠습니까? (0: 취소 및 홈으로 1: 삭제):");
             sureToDelete = input.whetherToDeleteOrNot(); // 메소드 이름에 맞는거 하나 만들기
             if(sureToDelete == 1){
