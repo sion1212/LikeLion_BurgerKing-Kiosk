@@ -3,8 +3,9 @@ package kiosk;
 import java.util.ArrayList;
 
 public class Branch {
-    Print print = new Print();
+    Printing print = new Printing();
     Input input = new Input();
+    int GOHOME = 0;
 
     public int homeToSelectedMenu(int menu){
         if(menu == 1 || menu == 2 || menu == 3){
@@ -45,5 +46,34 @@ public class Branch {
             return initialization.beverages();
         }
         return null;
+    }
+
+    public ArrayList<SelectedMenu> shoppingBasket(ArrayList<SelectedMenu> shoppingBasket){
+        Page page = new Page();
+        Operation operation = new Operation();
+        int selectedMenu = page.basket(shoppingBasket);
+
+        if(selectedMenu == 1){
+            operation.orderCompleted();
+        }
+        else if(selectedMenu == 2){
+            shoppingBasket = page.controlAmount(shoppingBasket);
+        }
+        else if(selectedMenu == 3){
+            shoppingBasket = page.delete(shoppingBasket);
+        }
+        return shoppingBasket;
+    }
+
+    public ArrayList<SelectedMenu> PutFoodInBasket(int menu, ArrayList<SelectedMenu> shoppingBasket){
+        Operation operation = new Operation();
+        Page page = new Page();
+
+        int selectedMenu = page.selectFood(menu);
+        if (selectedMenu != GOHOME) {
+            shoppingBasket = operation.PutMenuInShoppingBasket(menu, selectedMenu, shoppingBasket);
+        }
+
+        return shoppingBasket;
     }
 }

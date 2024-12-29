@@ -19,6 +19,6 @@ public class SelectedMenu extends Menu{
 
     @Override
     public String toString() {
-        return "- "+getName()+" "+getAmount()+"개";
+        return getName()+" "+getAmount()+"개";
     }
 }

@@ -42,13 +42,34 @@ public class Operation {
     }
 
     private int findDuplicatedIndex(Menu food, ArrayList<SelectedMenu> shoppingBasket){
-        int duplicatedIndex = -1;
+        final int NONDUPLICATE = -1;
+        int duplicatedIndex = NONDUPLICATE;
+        boolean duplicated = false;
         for(Menu foodInBasket : shoppingBasket){
             duplicatedIndex++;
             if(foodInBasket.getName().equals(food.getName())){
+                duplicated = true;
                 break;
             }
         }
-        return duplicatedIndex;
+        if(!duplicated){
+            return NONDUPLICATE;
+        }
+        else{
+            return duplicatedIndex;
+        }
+    }
+
+    public int calTotalPriceOfBasket(ArrayList<SelectedMenu> shoppingBasket){
+        int totalPrice = 0;
+        for(SelectedMenu selectedMenu : shoppingBasket){
+            totalPrice += selectedMenu.getPrice() * selectedMenu.getAmount();
+        }
+        return totalPrice;
+    }
+
+    public void orderCompleted(){
+        System.out.println("주문완료\n");
+        System.exit(0);
     }
 }
