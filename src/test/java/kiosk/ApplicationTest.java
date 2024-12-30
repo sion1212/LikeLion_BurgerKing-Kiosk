@@ -2,10 +2,21 @@ package kiosk;
 
 import org.junit.jupiter.api.Test;
 
-class ApplicationTest {
-    @Test
-    void homeToSelectedMenu(){
+import static jdk.internal.vm.PostVMInitHook.run;
+import static org.assertj.core.api.Assertions.*;
+//import camp.nextstep.edu.missionutils.test.NsTest;
 
+class ApplicationTest{
+    @Test
+    public void homeToSelectedMenuErrorThrow(){
+        Branch branch = new Branch();
+        assertThatIllegalArgumentException()
+                .isThrownBy(() -> {
+                    /*run method가 사용불가능
+                        -> 위의 camp.nextstep... 이 import되어야 하는데
+                        구글에 검색해도 gradle에 dependency 추가하는 방법을 찾지 못 함
+                   */
+                });
     }
 
 //        @Test
