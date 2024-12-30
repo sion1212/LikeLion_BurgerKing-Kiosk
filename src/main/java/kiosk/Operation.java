@@ -11,7 +11,7 @@ public class Operation {
         final int NONDUPLICATE = -1;
 
         SelectedMenu selectedFood = new SelectedMenu(MENU.get(selectedMenuIndex).getName(),MENU.get(selectedMenuIndex).getPrice());
-        // 선택된 메뉴가 중복되었다면 수량을 올리고, 중복되지 않았다면 해당 객체를 추가한다
+
         duplicatedIndex = findDuplicatedIndex(selectedFood, shoppingBasket);
         if(duplicatedIndex == NONDUPLICATE){
             shoppingBasket.add(selectedFood);

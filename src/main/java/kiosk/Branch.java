@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Branch {
     Printing print = new Printing();
-    Input input = new Input();
     int GOHOME = 0;
 
     public int homeToSelectedMenu(int menu){
