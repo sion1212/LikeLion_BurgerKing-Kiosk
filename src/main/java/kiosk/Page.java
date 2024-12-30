@@ -3,7 +3,8 @@ package kiosk;
 import java.util.ArrayList;
 
 public class Page {
-    int GOHOME = 0;
+    final int GO_HOME = 0;
+
     public int home(){
         Printing printing = new Printing();
         Input input = new Input();
@@ -37,12 +38,13 @@ public class Page {
 
         printing.amountControlPage(shoppingBasket);
         int menuIndexToChangeAmount = input.basketIndex(shoppingBasket);
-        if(menuIndexToChangeAmount-- != GOHOME){
+        if(menuIndexToChangeAmount-- != GO_HOME){
             System.out.print("변경할 수량을 입력하세요:");
             int updateAmount = input.amount();
 
             shoppingBasket = operation.updateAmount(menuIndexToChangeAmount,shoppingBasket,updateAmount);
-            System.out.println("수정완료\n");
+            System.out.println("수정완료");
+            System.out.println();
         }
         return shoppingBasket;
     }
@@ -61,7 +63,8 @@ public class Page {
             sureToDelete = input.whetherToDeleteOrNot(); // 메소드 이름에 맞는거 하나 만들기
             if(sureToDelete == 1){
                 shoppingBasket = operation.delete(menuNumberToDelete, shoppingBasket);
-                System.out.println("삭제완료\n");
+                System.out.println("삭제완료");
+                System.out.println();
             }
         }
         return shoppingBasket;

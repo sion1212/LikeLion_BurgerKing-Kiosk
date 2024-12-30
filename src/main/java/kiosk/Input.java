@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Input {
+    Validation validation = new Validation();
     public int homeMenu() {
         Scanner scanner = new Scanner(System.in);
         int menu = scanner.nextInt();
         scanner.nextLine();
 
-        if(menu >= 1 && menu <= 5) {
+        if(validation.homeMenu(menu)) {
             return menu;
         }
         throw new IllegalArgumentException("Invalid menu");
@@ -20,7 +21,7 @@ public class Input {
         int menu = scanner.nextInt();
         scanner.nextLine();
 
-        if(menu >= 0 && menu <= 6) {
+        if(validation.IndexOfFoodMenu(menu)) {
             return menu;
         }
         throw new IllegalArgumentException("Invalid menu");
@@ -28,11 +29,11 @@ public class Input {
 
     public int basketIndex(ArrayList<SelectedMenu> basket) {
         Scanner scanner = new Scanner(System.in);
-        int menu = scanner.nextInt();
+        int serial = scanner.nextInt();
         scanner.nextLine();
 
-        if(menu >= 0 && menu <= basket.size()) {
-            return menu;
+        if(validation.indexOfBasket(serial, basket)) {
+            return serial;
         }
         throw new IllegalArgumentException("Invalid menu");
     }
@@ -42,7 +43,7 @@ public class Input {
         int value = scanner.nextInt();
         scanner.nextLine();
 
-        if(value == 1 || value == 0) {
+        if(validation.confirm(value)) {
             return value;
         }
         throw new IllegalArgumentException("Invalid value");
@@ -53,7 +54,7 @@ public class Input {
         int amount = scanner.nextInt();
         scanner.nextLine();
 
-        if(amount >= 1 && amount <= 50){
+        if(validation.amount(amount)) {
             return amount;
         }
         throw new IllegalArgumentException("Amount must be between 1 and 50");

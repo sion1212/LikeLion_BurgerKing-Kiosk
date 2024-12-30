@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Branch {
     Printing print = new Printing();
-    int GOHOME = 0;
+    int GO_HOME = 0;
 
     public int homeToSelectedMenu(int menu){
         if(menu == 1 || menu == 2 || menu == 3){
@@ -69,7 +69,7 @@ public class Branch {
         Page page = new Page();
 
         int selectedMenu = page.selectFood(menu);
-        if (selectedMenu != GOHOME) {
+        if (selectedMenu != GO_HOME) {
             shoppingBasket = operation.PutMenuInShoppingBasket(menu, selectedMenu, shoppingBasket);
         }
 

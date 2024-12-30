@@ -1,5 +1,6 @@
 package kiosk;
 
+import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 
 public class Operation {
@@ -8,12 +9,12 @@ public class Operation {
         ArrayList<Menu> MENU = branch.initializeMenu(menu);
         int selectedMenuIndex = selectedMenu - 1;
         int duplicatedIndex;
-        final int NONDUPLICATE = -1;
+        final int NON_DUPLICATE = -1;
 
         SelectedMenu selectedFood = new SelectedMenu(MENU.get(selectedMenuIndex).getName(),MENU.get(selectedMenuIndex).getPrice());
 
         duplicatedIndex = findDuplicatedIndex(selectedFood, shoppingBasket);
-        if(duplicatedIndex == NONDUPLICATE){
+        if(duplicatedIndex == NON_DUPLICATE){
             shoppingBasket.add(selectedFood);
         }
         else{
@@ -34,16 +35,24 @@ public class Operation {
         return shoppingBasket;
     }
 
-    private ArrayList<SelectedMenu> updateAmountByOne(int index, ArrayList<SelectedMenu> shoppingBasket){
-        SelectedMenu countUpMenu = shoppingBasket.get(index);
-        countUpMenu.setAmount(countUpMenu.getAmount() + 1); // 유효성 검사 진행하기
-        shoppingBasket.set(index, countUpMenu);
+    public ArrayList<SelectedMenu> updateAmountByOne(int index, ArrayList<SelectedMenu> shoppingBasket){
+        Validation validation = new Validation();
+
+        SelectedMenu selectedMenu = shoppingBasket.get(index);
+        int OneIncreasedAmount = selectedMenu.getAmount() + 1;
+        if(validation.amount(OneIncreasedAmount)){
+            selectedMenu.setAmount(selectedMenu.getAmount() + 1); // 유효성 검사 진행하기
+        }
+        else{
+            throw new IllegalArgumentException("Too Many Amount");
+        }
+        shoppingBasket.set(index, selectedMenu);
         return shoppingBasket;
     }
 
-    private int findDuplicatedIndex(Menu food, ArrayList<SelectedMenu> shoppingBasket){
-        final int NONDUPLICATE = -1;
-        int duplicatedIndex = NONDUPLICATE;
+    public int findDuplicatedIndex(Menu food, ArrayList<SelectedMenu> shoppingBasket){
+        final int NON_DUPLICATE = -1;
+        int duplicatedIndex = NON_DUPLICATE;
         boolean duplicated = false;
         for(Menu foodInBasket : shoppingBasket){
             duplicatedIndex++;
@@ -53,7 +62,7 @@ public class Operation {
             }
         }
         if(!duplicated){
-            return NONDUPLICATE;
+            return NON_DUPLICATE;
         }
         else{
             return duplicatedIndex;
