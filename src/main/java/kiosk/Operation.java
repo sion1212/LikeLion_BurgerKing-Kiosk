@@ -25,7 +25,7 @@ public class Operation {
 
     public ArrayList<SelectedMenu> updateAmount(int index, ArrayList<SelectedMenu> shoppingBasket, int updateAmount){
         SelectedMenu countUpMenu = shoppingBasket.get(index);
-        countUpMenu.setAmount(updateAmount); // 유효성 검사 진행하기
+        countUpMenu.setAmount(updateAmount);
         shoppingBasket.set(index, countUpMenu);
         return shoppingBasket;
     }
@@ -39,9 +39,9 @@ public class Operation {
         Validation validation = new Validation();
 
         SelectedMenu selectedMenu = shoppingBasket.get(index);
-        int OneIncreasedAmount = selectedMenu.getAmount() + 1;
-        if(validation.amount(OneIncreasedAmount)){
-            selectedMenu.setAmount(selectedMenu.getAmount() + 1); // 유효성 검사 진행하기
+        int oneIncreasedAmount = selectedMenu.getAmount() + 1;
+        if(validation.amount(oneIncreasedAmount)){
+            selectedMenu.setAmount(oneIncreasedAmount);
         }
         else{
             throw new IllegalArgumentException("Too Many Amount");
